@@ -117,6 +117,38 @@ int main() {
         printf("Pilih menu: ");
         scanf("%d", &pilihan);
 
+switch(pilihan) {
+            case 1:
+                menu_sorting_dasar();
+                break;
+            case 2:
+                menu_advance_sorting();
+                break;
+            case 3:
+                printf("\nTerima kasih telah menggunakan program ini!\n");
+                break;
+            default:
+                printf("\nPilihan tidak valid! Silakan pilih 1, 2, atau 3.\n");
+        }
+    } while(pilihan != 3);
+    
+    if (word_array != NULL) {
+        for (int i = 0; i < word_count; i++) {
+            free(word_array[i]);
+        }
+        free(word_array);
+    }
+    
+    if (backup_array != NULL) {
+        for (int i = 0; i < word_count; i++) {
+            free(backup_array[i]);
+        }
+        free(backup_array);
+    }
+    
+    return 0;
+}
+
 void menu_advance_sorting() {
     int pilihan;
     double waktu;
