@@ -1,4 +1,3 @@
-```c
 #include <stdio.h>
 #include <string.h>
 
@@ -36,5 +35,4 @@ void shell_sort_string(char *arr[], int n) {
         }
     }
 }
-```
 
