@@ -50,7 +50,7 @@ void display_string_array(char *arr[], int n, int show_count) {
 
 double hitung_waktu_int(void (*sorting_func)(int[], int), int arr[], int n) {
     clock_t start, end;
-    int temp_arr = (int)malloc(n * sizeof(int));
+    int temp_arr = (int*)malloc(n * sizeof(int));
     for (int i = 0; i < n; i++) temp_arr[i] = arr[i];
     
     start = clock();
@@ -63,15 +63,19 @@ double hitung_waktu_int(void (*sorting_func)(int[], int), int arr[], int n) {
     return ((double)(end - start)) / CLOCKS_PER_SEC * 1000.0;
 }
 
-double hitung_waktu_string(void (sorting_func)(char[], int), char *arr[], int n) {
+double hitung_waktu_string(void (*sorting_func)(char*[], int), char *arr[], int n) {
     clock_t start, end;
-    char *temp_arr = (char)malloc(n * sizeof(char));
-    for (int i = 0; i < n; i++) temp_arr[i] = arr[i];
-    
+    char **temp_arr = (char**)malloc(n * sizeof(char*));
+    for (int i = 0; i < n; i++) 
+        temp_arr[i] = strdup(arr[i]);
+}
     start = clock();
     sorting_func(temp_arr, n);
     end = clock();
-    
+
+for (int i = 0; i < n; 1++) {
+    free(temp_arr[i]);
+}
     free(temp_arr);
     
     // Hasil dalam MILIDETIK
