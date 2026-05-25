@@ -101,6 +101,21 @@ void menu_sorting_dasar() {
         }
     } while(pilihan != 4);
 }
+int main() {
+    int pilihan;
+    
+    srand(time(NULL));
+    
+    do {
+        printf("\n========================================================\n");
+        printf("========       MENU UTAMA       ========================\n");
+        printf("========================================================\n");
+        printf("1. Sorting Dasar (Bubble, Insertion, Selection Sort)\n");
+        printf("2. Advance Sorting (Merge, Quick, Shell Sort)\n");
+        printf("3. Keluar\n");
+        printf("========================================================\n");
+        printf("Pilih menu: ");
+        scanf("%d", &pilihan);
 
 void menu_advance_sorting() {
     int pilihan;
