@@ -150,6 +150,34 @@ void menu_advance_sorting() {
                     printf("\n=== MENJALANKAN SHELL SORT ===\n");
                     waktu = hitung_waktu_string(shell_sort_string, word_array, word_count);
                     break;
+                    
+                    printf("\n=== SETELAH SORTING (10 kata pertama) ===\n");
+            display_string_array(word_array, word_count, 10);
+            printf("\n========================================================\n");
+            printf("Waktu eksekusi: %.3f milidetik\n", waktu);
+            printf("========================================================\n");
+        }
+    } while(pilihan != 4);
+}
+
+int main() {
+    int pilihan;
+    
+    srand(time(NULL));
+    
+    do {
+        printf("\n========================================================\n");
+        printf("========       MENU UTAMA       ========================\n");
+        printf("========================================================\n");
+        printf("1. Sorting Dasar (Bubble, Insertion, Selection Sort)\n");
+        printf("2. Advance Sorting (Merge, Quick, Shell Sort)\n");
+        printf("3. Keluar\n");
+        printf("========================================================\n");
+        printf("Pilih menu: ");
+        scanf("%d", &pilihan); 
+
             }
             
            
+
+            
